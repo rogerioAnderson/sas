@@ -1,0 +1,8 @@
+.project
+.settings
+ear/target ejb/target web/target
+.classpath
+*/.classpath
+ear/target/
+ejb/target/
+web/target/

@@ -6,3 +6,4 @@ ear/target ejb/target web/target
 ear/target/
 ejb/target/
 web/target/
+.DS_Store

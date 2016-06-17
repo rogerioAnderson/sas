@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="default" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+		<non-jta-data-source>java:/jdbc/PostgresSASDS</non-jta-data-source>
+		<!-- 
+		<non-jta-data-source>java:comp/env/jdbc/sas</non-jta-data-source>
+		 -->
+		
+		
+		
+		<class>com.coded2.sas.entity.Aluno</class>
+		<class>com.coded2.sas.entity.Curso</class>
+		<class>com.coded2.sas.entity.Disciplina</class>
+		<class>com.coded2.sas.entity.DisciplinaCurso</class>
+		<class>com.coded2.sas.entity.Pessoa</class>
+		<class>com.coded2.sas.entity.Turma</class>
+		<class>com.coded2.sas.entity.TurmaAluno</class>
+		<class>com.coded2.sas.entity.UF</class>
+		<class>com.coded2.sas.entity.Usuario</class>
+		<properties>
+
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+			 
+			<property name="hibernate.default_schema" value="sas"/>
+			<property name="hibernate.connection.autocommit" value="false" />
+         	<property name="hibernate.show_sql" value="true" />
+	      	<property name="hibernate.format_sql" value="true" />
+		</properties>
+	</persistence-unit>
+</persistence>

@@ -7,6 +7,17 @@
   </parent>
   <artifactId>sas-ejb</artifactId>
   <packaging>ejb</packaging>
-  <version>${label.project.version}</version>
-  <name>SAS-EJB</name>
+  <name>sas-ejb</name>
+  <dependencies>
+  	<!-- http://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-annotations</artifactId>
+	    <version>2.7.4</version>
+	</dependency>
+	<dependency>
+		<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+	</dependency>
+  </dependencies>
 </project>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="sas">
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+		<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+		<script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
+		<script type="text/javascript" src="bower_components/angular-touch/angular-touch.js"></script>
+		<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+		<script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+		<script type="text/javascript" src="bower_components/angular-ui-mask/dist/mask.js"></script>
+		<script type="text/javascript" src="js/functions.js"></script>
+		
+		
+		<!-- css -->
+		<link href="bower_components/bootstrap-css/css/bootstrap.css" rel="stylesheet"/>
+		<link href="bower_components/angular-bootstrap/ui-bootstrap-csp.css" rel="stylesheet"/>
+		<link href="css/app.css" rel="stylesheet"/>
+	</head>
+<body ng-controller="ApplicationController">
+<div id="page">
+			<div id="header">
+		    	<a href="#" class="logo">
+		    		<img src="images/rf-logo.png"/>
+		    	</a>
+			</div>	
+    		<div id="page-content">
+    			<div class="left-menu">
+    				
+    			</div>
+    			<div class="content-container">
+					<div ng-view>
+					</div>
+				</div>
+    			<div class="clear"></div>
+    		</div>
+    		<div id="footer"></div>
+    	</div>
+</body>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/route.js"></script>
+	<script type="text/javascript" src="js/modules/constant.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+	<script type="text/javascript" src="js/modules/application/ApplicationController.js"></script>
+	<script type="text/javascript" src="js/modules/application/HTTPInterceptor.js"></script>
+	<script type="text/javascript" src="js/modules/application/no_cache.js"></script>
+	<script type="text/javascript" src="js/modules/login/AuthService.js"></script>
+	<script type="text/javascript" src="js/modules/login/LoginController.js"></script>
+	<script type="text/javascript" src="js/modules/login/Session.js"></script>
+</html>

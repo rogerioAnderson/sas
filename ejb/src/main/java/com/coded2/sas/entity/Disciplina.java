@@ -16,6 +16,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.coded2.infra.entity.Model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 /**
@@ -42,6 +43,7 @@ public class Disciplina extends Model{
 	private String noDisciplina;
 
 	//bi-directional many-to-one association to DisciplinaCurso
+	
 	@OneToMany(mappedBy="disciplina")
 	private List<DisciplinaCurso> cursos;
 
@@ -120,9 +122,12 @@ public class Disciplina extends Model{
 		return turma;
 	}
 
+	@JsonIgnore
 	@Override
 	public Object getId() {
 		return getNuDisciplina();
 	}
+	
+	
 
 }

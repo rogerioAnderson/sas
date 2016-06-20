@@ -6,7 +6,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background: #94aebc url('../images/body-bg.jpg') left bottom repeat;
+    background: #94aebc left bottom repeat;
     font: normal 12px "Lucida Sans Unicode", "Lucida Grande", Geneva, Verdana, Arial, sans-serif;
     height: 100%;
 }
@@ -53,82 +53,8 @@ p {
     border: none;
 }
 
-#header .right-controls {
-    float: right;
-}
 
-#header ul.top-links {
-    margin: 5px 15px 0 0;
-    text-align: right;
-}
 
-#header ul.top-links li {
-    display: inline;
-    font-size: 11px;
-}
-
-#header ul.top-links li a {
-    background: url('../images/sep.gif') center right no-repeat;
-    color: #fff;
-    padding: 0 8px 0 3px;
-    font: 11px "Lucida Sans Unicode", "Lucida Grande", Geneva, Verdana, Arial, sans-serif;
-}
-
-#header ul.top-links li.last a {
-    background: none;
-    padding: 0 0 0 3px;
-}
-
-#header ul.top-links li.download-link a {
-    color: #eccb7b;
-}
-
-#header ul#skin-menu {
-    color: #89a0be;
-    cursor: default;
-    font-weight: bold;
-    margin: 38px 15px 0 0;
-    text-align: right;
-}
-
-#header ul#skin-menu li {
-    cursor: pointer;
-    display: inline-block;
-    float: right;
-    height: 25px;
-    margin-left: 4px;
-    padding-left: 5px;
-}
-
-#header ul#skin-menu li a {
-    color: #89A0BE;
-}
-
-#header ul#skin-menu li span {
-    height: 25px;
-    font: bold 12px "Lucida Sans Unicode", "Lucida Grande", Geneva, Verdana, Arial, sans-serif;
-    padding: 3px 5px 0 0;
-    display: inline-block;
-}
-
-#header ul#skin-menu li span:hover {
-    text-decoration: underline;
-}
-
-#header ul#skin-menu li.label span {
-    color: #999999;
-    cursor: default;
-    font-weight: normal;
-}
-
-#header ul#skin-menu li.current-skin {
-    background: url('../images/select-skin-button.png') left -75px no-repeat;
-}
-
-#header ul#skin-menu li.current-skin span {
-    background: url('../images/select-skin-button.png') right 0 repeat-x;
-    color: #fff;
-}
 
 #header ul#skin-menu li.label span:hover,#header ul#skin-menu li.current-skin span:hover {
     text-decoration: none;
@@ -149,8 +75,10 @@ p {
 }
 
 #page-content .content-container {
-    float: right;
-    width: 700px;
+    padding-top: 30px;
+    padding-bottom:30px;
+    background: #FFFFFF;
+    min-height: 480px;
 }
 
 #page-content .content-container fieldset.example-cnt {
@@ -168,7 +96,7 @@ p {
 }
 
 #footer {
-    background: url('../images/footer.png') top left no-repeat;
+    background: top left no-repeat;
     color: #000000;
     text-align: center;
     padding: 15px 20px 10px;

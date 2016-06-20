@@ -15,6 +15,13 @@ function routeConfig($routeProvider,$locationProvider,USER_ROLES){
 			      authorizedRoles: [USER_ROLES.all]
 			  }
 	})
+	.when("/disciplina",{
+		templateUrl:"view/disciplina/disciplina.html",
+		controller:"DisciplinaController",
+		data: {
+			      authorizedRoles: [USER_ROLES.administrador]
+			  }
+	})
 	.otherwise ({ redirectTo: '/' });
 }
 

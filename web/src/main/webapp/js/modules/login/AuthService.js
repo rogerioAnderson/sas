@@ -3,7 +3,7 @@
  */
 _app.factory("AuthService", AuthService);
 
-function AuthService ($http, Session,USER_ROLES,CODIGO_RETORNO,CONFIG){
+function AuthService ($http, Session,USER_ROLES,RETURN_CODE,CONFIG){
 	
 	var authService = {}
 	

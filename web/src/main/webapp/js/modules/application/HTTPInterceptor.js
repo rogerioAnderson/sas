@@ -5,15 +5,14 @@ function HTTPInterceptor(Session,$injector){
 	
 	self.request = function(config){
 		config.headers["Authorization"]=Session.id;
-		config.headers["SIGLA_SISTEMA"]="SICDU";
 		//config.url = config.url+"?time="+new Date().getTime();
 		return config;
 	}
 	
 	self.response = function(response){
 		try{
-			if(response.data.codigoRetorno=="-1"){
-				showErrorDialog($injector.get("$uibModal"), response.data.mensagem);
+			if(response.data.returnCode=="ERROR"){
+				showErrorDialog($injector.get("$uibModal"), response.data.text);
 			}
 		}catch(error){
 			console.log(error);

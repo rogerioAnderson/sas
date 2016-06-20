@@ -15,9 +15,14 @@ _app.constant("AUTH_EVENTS", {
 		  comum: "comum",
 		  atendimento:"atendimento",
 		  auditor: "auditor"
-	}).constant("CODIGO_RETORNO",{
-		OK:"0",
-		ERRO:"-1"
+	}).constant("RETURN_CODE",{
+		OK:"OK",
+		ERRO:"ERROR"
 	}).constant("CONFIG",{
 		baseUrl:""
+	}).constant("OPERATION",{
+		insertion:"insertion",
+		update:"update",
+		search:"search",
+		deletion:"deletion"
 	});

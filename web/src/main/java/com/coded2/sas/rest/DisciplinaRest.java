@@ -1,3 +1,4 @@
+
 package com.coded2.sas.rest;
 
 import javax.ejb.EJB;
@@ -10,7 +11,7 @@ import javax.ws.rs.core.Response;
 
 import com.coded2.infra.message.Message;
 import com.coded2.sas.entity.Disciplina;
-import com.coded2.sas.service.disciplina.DisciplinaService;
+import com.coded2.sas.service.disciplina.DisciplinaLocal;
 
 @Path("/disciplina")
 
@@ -19,7 +20,7 @@ public class DisciplinaRest {
 	
 	
 	@EJB
-	DisciplinaService service;
+	DisciplinaLocal service;
 	
 	@POST
 	@Path("save")
@@ -29,4 +30,34 @@ public class DisciplinaRest {
 		Message message = service.save(disciplina);
 		return Response.ok(message).build();
 	}
+	
+	
+	@POST
+	@Path("search")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response search(Disciplina disciplina) throws Exception{
+		Message message = service.search(disciplina);
+		return Response.ok(message).build();
+	}
+	
+	@POST
+	@Path("remove")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response remove(Disciplina disciplina) throws Exception{
+		Message message = service.remove(disciplina);
+		return Response.ok(message).build();
+	}
+	
+	@POST
+	@Path("update")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response update(Disciplina disciplina) throws Exception{
+		Message message = service.update(disciplina);
+		return Response.ok(message).build();
+	}
+	
+	
 }

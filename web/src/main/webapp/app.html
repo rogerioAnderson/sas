@@ -20,19 +20,15 @@
 <body ng-controller="ApplicationController">
 <div id="page">
 			<div id="header">
-		    	<a href="#" class="logo">
+		    	<a href="#/home" class="logo">
 		    		<img src="images/rf-logo.png"/>
 		    	</a>
 			</div>	
     		<div id="page-content">
-    			<div class="left-menu">
-    				
-    			</div>
-    			<div class="content-container">
+    			<div class="content-container col-sm-12" >
 					<div ng-view>
 					</div>
 				</div>
-    			<div class="clear"></div>
     		</div>
     		<div id="footer"></div>
     	</div>
@@ -47,4 +43,7 @@
 	<script type="text/javascript" src="js/modules/login/AuthService.js"></script>
 	<script type="text/javascript" src="js/modules/login/LoginController.js"></script>
 	<script type="text/javascript" src="js/modules/login/Session.js"></script>
+	<script type="text/javascript" src="js/ui/ModalController.js"></script>
+	<script type="text/javascript" src="js/controllers/DisciplinaController.js"></script>
+	<script type="text/javascript" src="js/services/DisciplinaService.js"></script>
 </html>

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE project>
+<jboss-web>
+  <!-- 
+    <security-domain>java:/jaas/jaas-sicdu-conveniado</security-domain>
+   -->
+	<security-domain>java:/jaas/jaas-sas</security-domain>
+   
+</jboss-web>

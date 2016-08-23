@@ -8,12 +8,12 @@ public class Message implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private ReturnCode returnCode ;
 	private Object result;
-	private String text;
+	private String text[];
 	
-	public String getText() {
+	public String[] getText() {
 		return text;
 	}
-	public void setText(String text) {
+	public void setText(String... text) {
 		this.text = text;
 	}
 	public ReturnCode getReturnCode() {

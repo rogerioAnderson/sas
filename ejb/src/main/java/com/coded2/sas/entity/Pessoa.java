@@ -15,8 +15,16 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 
 import com.coded2.infra.entity.Model;
+import com.coded2.infra.json.serializer.DateSerializer;
+import com.coded2.infra.validation.contraintvalidators.annotation.CPF;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 
 /**
@@ -38,12 +46,16 @@ public class Pessoa extends Model {
 	@Column(name="co_cep")
 	private String coCep;
 
+	@CPF
+	@NotNull(message="Campo CPF Obrigatório")
 	@Column(name="co_cpf")
 	private String coCpf;
 
+	@NotNull(message="Campo Identidade Obrigatório")
 	@Column(name="co_rg")
 	private String coRg;
 
+	@NotNull(message="Campo Celular Obrigatório")
 	@Column(name="de_celular")
 	private String deCelular;
 
@@ -53,22 +65,35 @@ public class Pessoa extends Model {
 	@Column(name="de_email")
 	private String deEmail;
 
+	
+	@NotNull(message="Campo Endereço Obrigatório")
 	@Column(name="de_endereco")
 	private String deEndereco;
 
+	@NotNull(message="Telefone Campo obrigatório")
+	@Digits(message="O telefone deve conter o DDD sem 0 e o numero com 9 ou 8 digitos", fraction = 0, integer = 11)
 	@Column(name="de_telefone")
 	private String deTelefone;
 
 	@Column(name="de_titulacao")
 	private String deTitulacao;
-
+	
+	
+	@JsonSerialize(using=DateSerializer.class)
+	@JsonFormat(shape=JsonFormat.Shape.STRING,pattern="dd/MM/yyyy",locale="pt-BR")
+	@NotNull(message="Data de Nascimento campo obrigatório")
+	@Past(message="A data de Nascimento não pode ser uma data futura")
 	@Temporal(TemporalType.DATE)
 	@Column(name="dt_nascimento")
 	private Date dtNascimento;
 
+	
+	@NotNull(message="Função Campo Obrigatório")
 	@Column(name="ic_funcao")
 	private String icFuncao;
 
+	
+	
 	@Column(name="no_graduacao")
 	private String noGraduacao;
 
@@ -77,12 +102,16 @@ public class Pessoa extends Model {
 
 	@Column(name="no_pai")
 	private String noPai;
-
+	
+	
+	@NotNull(message="Nome da pessoa é obrigatório")
 	@Column(name="no_pessoa")
 	private String noPessoa;
 
+	
+	@NotNull(message="O estado de Nascimento deve ser informado")
 	//bi-directional many-to-one association to UF
-	@ManyToOne(fetch=FetchType.LAZY)	
+	@ManyToOne(fetch=FetchType.EAGER)	
 	@JoinColumn(name="sg_uf")
 	
 	private UF uf;
@@ -96,7 +125,7 @@ public class Pessoa extends Model {
 
 	public void setNuPessoa(Integer nuPessoa) {
 		this.nuPessoa = nuPessoa;
-	}
+	} 
 
 	public String getCoCep() {
 		return this.coCep;
@@ -257,6 +286,7 @@ public class Pessoa extends Model {
 	}
 
 	@Override
+	@JsonIgnore
 	public Object getId() {
 		return getNuPessoa();
 	}

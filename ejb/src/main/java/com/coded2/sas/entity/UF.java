@@ -10,6 +10,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.coded2.infra.entity.Model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 /**
@@ -28,6 +29,7 @@ public class UF extends Model {
 
 	private String nome;
 
+	@JsonIgnore
 	//bi-directional many-to-one association to Pessoa
 	@OneToMany(mappedBy="uf")
 	private List<Pessoa> pessoas;
@@ -73,6 +75,7 @@ public class UF extends Model {
 		return pessoa;
 	}
 
+	@JsonIgnore
 	@Override
 	public Object getId() {
 		return getSgUf();

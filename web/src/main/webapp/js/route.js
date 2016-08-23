@@ -22,6 +22,41 @@ function routeConfig($routeProvider,$locationProvider,USER_ROLES){
 			      authorizedRoles: [USER_ROLES.administrador]
 			  }
 	})
+	.when("/curso",{
+		templateUrl:"view/curso/curso.html",
+		controller:"CursoController",
+		data: {
+			      authorizedRoles: [USER_ROLES.administrador]
+			  }
+	})
+	.when("/pessoa/incluir",{
+		templateUrl:"view/pessoa/incluir.html",
+		controller:"PessoaController",
+		data: {
+			      authorizedRoles: [USER_ROLES.administrador]
+			  }
+	})
+	.when("/pessoa/editar",{
+		templateUrl:"view/pessoa/editar.html",
+		controller:"PessoaController",
+		data: {
+			      authorizedRoles: [USER_ROLES.administrador]
+			  }
+	})
+	.when("/pessoa/consultar",{
+		templateUrl:"view/pessoa/consultar.html",
+		controller:"PessoaController",
+		data: {
+			      authorizedRoles: [USER_ROLES.administrador]
+			  }
+	})
+	.when("/pessoa/editar",{
+		templateUrl:"view/pessoa/editar.html",
+		controller:"PessoaController",
+		data: {
+			      authorizedRoles: [USER_ROLES.administrador]
+			  }
+	})
 	.otherwise ({ redirectTo: '/' });
 }
 

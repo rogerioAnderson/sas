@@ -1,0 +1,65 @@
+<div>	
+	<form id="formConsultar" class="form-horizontal">
+		<div class="form-group" >
+			<label  class="col-sm-2 control-label">Nome</label>
+			<div class="col-sm-6">
+				<input class="form-control" ng-model="pessoa.noPessoa" maxlength="150" >
+			</div>
+		</div>
+		<div class="form-group" >
+			<label  class="col-sm-2 control-label">CPF</label>
+			<div class="col-sm-3">
+				<input class="form-control " ui-mask="999.999.999-99"  ng-model="pessoa.coCpf" >
+			</div>
+		</div>
+		<div class="form-group" >
+			<label  class="col-sm-2 control-label">Email</label>
+			<div class="col-sm-3">
+				<input class="form-control" type="email" ng-model="pessoa.deEmail" >
+			</div>
+		</div>
+		<div class="form-group" >
+			<button class="btn btn-primary" ng-click="search()" >Consultar</button>
+		</div>
+	</form>
+</div>
+
+
+<div>
+	<table class="table table-striped" ng-if="result">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Telefone</th>
+				<th>Celular</th>
+				<th>Email</th>
+				<th>Detalhar</th>
+				<th>Alterar</th>
+				<th>Excluir</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="pessoa in result">
+				<td>{{pessoa.noPessoa}}</td>
+				<td>{{pessoa.deTelefone}}</td>
+				<td>{{pessoa.deCelular}}</td>
+				<td>{{pessoa.deEmail}}</td>
+				<td>
+					 <button ng-click="detail(pessoa)" class="btn btn-default btn-sm">
+						<span class="glyphicon glyphicon-eye-open"></span>
+					 </button>
+				</td>
+				<td>
+					 <button ng-click="edit(pessoa)" class="btn btn-default btn-sm">
+						<span class="glyphicon glyphicon-pencil"></span>
+					 </button>
+				</td>
+				<td>
+					<button ng-click="remove(pessoa)" class="btn btn-default btn-sm">
+						<span class="glyphicon glyphicon-remove"></span>
+					</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

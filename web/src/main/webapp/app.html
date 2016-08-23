@@ -9,30 +9,59 @@
 		<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
 		<script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 		<script type="text/javascript" src="bower_components/angular-ui-mask/dist/mask.js"></script>
+		<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+		<script type="text/javascript" src="bower_components/metisMenu/dist/metisMenu.js"></script>
 		<script type="text/javascript" src="js/functions.js"></script>
-		
 		
 		<!-- css -->
 		<link href="bower_components/bootstrap-css/css/bootstrap.css" rel="stylesheet"/>
 		<link href="bower_components/angular-bootstrap/ui-bootstrap-csp.css" rel="stylesheet"/>
-		<link href="css/app.css" rel="stylesheet"/>
+		 <link href="css/app.css" rel="stylesheet"/>
 	</head>
 <body ng-controller="ApplicationController">
-<div id="page">
-			<div id="header">
-		    	<a href="#/home" class="logo">
-		    		<img src="images/rf-logo.png"/>
-		    	</a>
-			</div>	
-    		<div id="page-content">
-    			<div class="content-container col-sm-12" >
-					<div ng-view>
-					</div>
-				</div>
-    		</div>
-    		<div id="footer"></div>
-    	</div>
+	<div id="wrapper">
+		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">SAS v1.50</a>
+            </div>
+            <!-- /.navbar-header -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                    	 <li>
+                        	<a href="#" id="menuPessoa" >Pessoas</a>
+                        	<ul class="nav nav-second-level" >
+                        		<li>
+                        			<a href="#pessoa/consultar">Consultar</a>
+                        		</li>
+                        		<li>
+                        			<a href="#pessoa/incluir">Incluir</a>
+                        		</li>
+                        	</ul>
+                        </li>
+                        <li>
+                            <a href="#/disciplina">Disciplina</a>
+                        </li>
+                        <li>
+                        	<a href="#/curso">Cursos</a>
+                        </li>
+                     </ul>
+                </div>
+           </div>
+        </nav>
+        <div id="page-wrapper">
+        	<div style="padding: 50px 20px 20px 20px;" ng-view></div>
+        </div>
+	</div>
+	<!-- end wrapper -->
 </body>
+	<script type="text/javascript" src="js/sidebar.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="js/route.js"></script>
 	<script type="text/javascript" src="js/modules/constant.js"></script>
@@ -46,4 +75,10 @@
 	<script type="text/javascript" src="js/ui/ModalController.js"></script>
 	<script type="text/javascript" src="js/controllers/DisciplinaController.js"></script>
 	<script type="text/javascript" src="js/services/DisciplinaService.js"></script>
+	<script type="text/javascript" src="js/controllers/CursoController.js"></script>
+	<script type="text/javascript" src="js/services/CursoService.js"></script>
+	<script type="text/javascript" src="js/controllers/PessoaController.js"></script>
+	<script type="text/javascript" src="js/services/PessoaService.js"></script>
+	<script type="text/javascript" src="js/services/UFServices.js"></script>
+	
 </html>

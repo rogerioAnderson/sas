@@ -25,7 +25,10 @@
             <h3 class="modal-title">{{title}}</h3>
         </div>
         <div class="modal-body">
-            {{text}}
+            <span ng-repeat="msg in text">
+            	{{msg}}
+            </span>
+            
         </div>
         <div class="modal-footer">
        		<button class="btn"  ng-class="{'btn-success':success, 'btn-danger':error, 'btn-warning':confirm}" type="button"  ng-click="ok()">

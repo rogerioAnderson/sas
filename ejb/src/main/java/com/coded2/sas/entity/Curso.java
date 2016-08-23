@@ -19,6 +19,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.coded2.infra.entity.Model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 /**
@@ -184,6 +185,7 @@ public class Curso extends Model {
 		this.coordenador = coordenador;
 	}
 
+	@JsonIgnore
 	@Override
 	public Object getId() {
 		return getNuCurso();

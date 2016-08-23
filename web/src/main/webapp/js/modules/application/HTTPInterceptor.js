@@ -5,6 +5,7 @@ function HTTPInterceptor(Session,$injector){
 	
 	self.request = function(config){
 		config.headers["Authorization"]=Session.id;
+		config.headers["Content-Type"]="application/json";
 		//config.url = config.url+"?time="+new Date().getTime();
 		return config;
 	}

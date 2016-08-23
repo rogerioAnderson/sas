@@ -21,7 +21,9 @@ function modalController($scope, $uibModalInstance, text, title, isError, isSucc
 	$scope.success = isSuccess;
 	$scope.confirm= isConfirm;
 	
-	
+	 if (!angular.isArray(text)) {
+		 text = [text];
+	 }
 	$scope.text = text;
 	$scope.title = title;
 	

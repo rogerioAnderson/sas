@@ -7,3 +7,4 @@ ear/target/
 ejb/target/
 web/target/
 .DS_Store
+web/.tern-project

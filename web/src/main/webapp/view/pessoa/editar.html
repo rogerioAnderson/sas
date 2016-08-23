@@ -1,0 +1,112 @@
+<div>
+	<form id="formIncluir" class="form-horizontal">
+		<div class="form-group" >
+			<label  class="col-sm-2 control-label">Nome</label>
+			<div class="col-sm-6">
+				<input class="form-control" ng-model="pessoa.noPessoa" maxlength="150" required="required">
+			</div>
+		</div>
+		<div class="form-group" >
+			<label  class="col-sm-2 control-label">CPF</label>
+			<div class="col-sm-3">
+				<input class="form-control " ui-mask="999.999.999-99"  ng-model="pessoa.coCpf" required="required">
+			</div>
+		</div>
+		<div class="form-group" >
+			<label  class="col-sm-2 control-label">Identidade</label>
+			<div class="col-sm-3">
+				<input class="form-control" maxlength="30" ng-model="pessoa.coRg" required="required" >
+			</div>
+		</div>
+		<div class="form-group" >
+			<label  class="col-sm-2 control-label">Data de Nascimento</label>
+			<div class="col-sm-3">
+				<input class="form-control col-sm-2"  ng-model="pessoa.dtNascimento" model-view-value="true" ui-mask="99/99/9999" required="required">
+			</div>
+		</div>
+		
+		<div class="form-group" >
+			<label  class="col-sm-2 control-label">Cidade Natal</label>
+			<div class="col-sm-3">
+				<input class="form-control col-sm-2"  ng-model="pessoa.deCidadeNatal" maxlength="80" required="required">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label" >UF</label>
+			<div class="col-sm-2">
+				<select class="form-control" ng-model="pessoa.uf.sgUf"  id="uf" >
+					<option ng-repeat="uf in ufs" value="{{uf.sgUf}}">
+							{{uf.nome}}
+					</option>
+				</select>
+			</div>
+		</div>
+		
+		<div class="form-group" >
+			<label  class="col-sm-2 control-label">Tipo</label>
+			<div class="col-sm-2">
+				<select class="form-control" ng-model="pessoa.icFuncao"  id="funcao" >
+					<option value="1">Professor</option>
+					<option value="2">Aluno</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group" >
+			<label  class="col-sm-2 control-label">Telefone</label>
+			<div class="col-sm-3">
+				<input class="form-control " ui-mask="(99) 99999999?9"  ng-model="pessoa.deTelefone" >
+			</div>
+		</div>
+		<div class="form-group" >
+			<label  class="col-sm-2 control-label">Celular</label>
+			<div class="col-sm-3">
+				<input class="form-control " ui-mask="(99) 99999999?9" ng-model="pessoa.deCelular" >
+			</div>
+		</div>
+		<div class="form-group" >
+			<label  class="col-sm-2 control-label">Email</label>
+			<div class="col-sm-3">
+				<input class="form-control" type="email" ng-model="pessoa.deEmail" >
+			</div>
+		</div>
+		<div class="form-group" >
+			<label  class="col-sm-2 control-label">CEP</label>
+			<div class="col-sm-3">
+				<input class="form-control" type="text" ui-mask="99999-999" ng-model="pessoa.coCep" >
+			</div>
+		</div>
+		<div class="form-group" >
+			<label  class="col-sm-2 control-label">Endereço</label>
+			<div class="col-sm-6">
+				<textarea rows="3" class="col-sm-12" ng-model="pessoa.deEndereco"></textarea>
+			</div>
+		</div>
+		<div class="form-group" >
+			<label  class="col-sm-2 control-label">Nome do pai</label>
+			<div class="col-sm-6">
+				<input class="form-control" type="text"  ng-model="pessoa.noPai" maxlength="80" >
+			</div>
+		</div>
+		<div class="form-group" >
+			<label  class="col-sm-2 control-label">Nome da mãe</label>
+			<div class="col-sm-6">
+				<input class="form-control" type="text"  ng-model="pessoa.noMae" maxlength="80" >
+			</div>
+		</div>
+		<div class="form-group" >
+			<label  class="col-sm-2 control-label">Graduação</label>
+			<div class="col-sm-6">
+				<input class="form-control" type="text"  ng-model="pessoa.noGraduacao" maxlength="80" >
+			</div>
+		</div>
+		<div class="form-group" >
+			<label  class="col-sm-2 control-label">Titulação</label>
+			<div class="col-sm-6">
+				<input class="form-control" type="text"  ng-model="pessoa.deTitulacao" maxlength="80" >
+			</div>
+		</div>
+		<div class="form-group" >
+			<button class="btn btn-primary col-sm-offset-4" ng-click="update()" >Alterar</button>
+		</div>
+	</form>
+</div>

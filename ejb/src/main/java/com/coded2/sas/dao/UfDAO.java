@@ -23,7 +23,6 @@ public class UfDAO extends GenericDAO<UF>{
 	@Override
 	protected List<Predicate> searchConditions(UF obj, CriteriaBuilder builder,
 			Root<UF> root, CriteriaQuery<UF> query) throws Exception {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

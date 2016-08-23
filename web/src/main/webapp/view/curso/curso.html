@@ -1,0 +1,40 @@
+<div>
+	<form id="formCurso" class="form-inline">
+		<div class="form-group">
+			<label>Nome</label>
+			<input type="text" class="form-control"  ng-model="curso.noCurso"  maxlength="80" />
+		</div>
+		<button class="btn btn-primary" ng-show="operation=='insertion'" ng-click="insert()" >Incluir</button>
+		<button class="btn btn-primary" ng-show="operation=='update'" ng-click="update()" >Alterar</button>
+		<button class="btn btn-primary" ng-show="operation=='update'" ng-click="cancelUpdate()">Cancelar</button>
+	</form>
+</div>
+
+<br/>
+
+<div>
+	<table class="table table-striped" ng-if="cursos">
+		<thead>
+			<tr>
+				<th>Curso</th>
+				<th>Alterar</th>
+				<th>Excluir</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="curso in cursos">
+				<td>{{curso.noCurso}}</td>
+				<td>
+					 <button ng-click="edit(curso)" class="btn btn-default btn-sm">
+						<span class="glyphicon glyphicon-pencil"></span>
+					 </button>
+				</td>
+				<td>
+					<button ng-click="remove(curso)" class="btn btn-default btn-sm">
+						<span class="glyphicon glyphicon-remove"></span>
+					</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

@@ -2,17 +2,28 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
   <display-name>sicdu-servico-web</display-name>
   <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
   </welcome-file-list>
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>Servico de Autocadastro</web-resource-name>
-      <url-pattern>/*</url-pattern>
+      <url-pattern>/app.html</url-pattern>
+      <url-pattern>/rest.*</url-pattern>
       <http-method>POST</http-method>
       <http-method>GET</http-method>
     </web-resource-collection>
     <auth-constraint>
       <role-name>Administrador</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Servico de Autocadastro</web-resource-name>
+      <url-pattern>/index.html</url-pattern>
+      <http-method>GET</http-method>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>*</role-name>
     </auth-constraint>
   </security-constraint>
   <security-role>

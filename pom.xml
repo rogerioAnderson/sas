@@ -65,7 +65,9 @@
 					<version>${ejb-plugin-version}</version>
 					<configuration>
 						<ejbVersion>${ejb-spec-version}</ejbVersion>
+						
 					</configuration>
+					
 				</plugin>
 
 				<!-- war plugin -skinny wars mode! -->

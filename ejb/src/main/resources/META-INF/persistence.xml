@@ -3,13 +3,13 @@
 	<persistence-unit name="default" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		
-		<non-jta-data-source>java:/jdbc/PostgresSASDS</non-jta-data-source>
+		<non-jta-data-source>java:jboss/datasources/PostgreSQLDS</non-jta-data-source>
 		<!-- 
-		<non-jta-data-source>java:comp/env/jdbc/sas</non-jta-data-source>
+			<non-jta-data-source>java:comp/env/jdbc/sas</non-jta-data-source>
 		 -->
-		
-		
-		
+
+
+
 		<class>com.coded2.sas.entity.Aluno</class>
 		<class>com.coded2.sas.entity.Curso</class>
 		<class>com.coded2.sas.entity.Disciplina</class>
@@ -27,10 +27,12 @@
 			<property name="hibernate.connection.autocommit" value="false" />
          	<property name="hibernate.show_sql" value="true" />
 	      	<property name="hibernate.format_sql" value="true" />
+	      	<!-- 
 	      	<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:15432/dbpsql"/>
 	      	<property name="javax.persistence.jdbc.user" value="dbpsql"/>
 	      	<property name="javax.persistence.jdbc.password" value="dbpass"/>
 	      	<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+	      	 -->
 		</properties>
 	</persistence-unit>
 </persistence>
